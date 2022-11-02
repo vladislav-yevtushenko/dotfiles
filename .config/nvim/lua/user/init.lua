@@ -1,4 +1,3 @@
-
 --              AstroNvim Configuration Table
 -- All configuration changes should go inside of the table below
 
@@ -75,20 +74,20 @@ local config = {
 
   -- Set dashboard header
   header = {
-"                    ██╗   ██╗██╗      █████╗ ██████╗",                       
-"                    ██║   ██║██║     ██╔══██╗██╔══██╗",                      
-"                    ██║   ██║██║     ███████║██║  ██║",                      
-"                    ╚██╗ ██╔╝██║     ██╔══██║██║  ██║",                      
-"                     ╚████╔╝ ███████╗██║  ██║██████╔╝",                      
-"                      ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝",                       
-" ",                                                                           
-" █████╗ ███████╗████████╗██████╗  ██████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
-"██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║██║   ██║██║████╗ ████║",
-"███████║███████╗   ██║   ██████╔╝██║   ██║██╔██╗ ██║██║   ██║██║██╔████╔██║",
-"██╔══██║╚════██║   ██║   ██╔══██╗██║   ██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
-"██║  ██║███████║   ██║   ██║  ██║╚██████╔╝██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
-"╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
-"                                                                           ",
+    "                    ██╗   ██╗██╗      █████╗ ██████╗",
+    "                    ██║   ██║██║     ██╔══██╗██╔══██╗",
+    "                    ██║   ██║██║     ███████║██║  ██║",
+    "                    ╚██╗ ██╔╝██║     ██╔══██║██║  ██║",
+    "                     ╚████╔╝ ███████╗██║  ██║██████╔╝",
+    "                      ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝",
+    " ",
+    " █████╗ ███████╗████████╗██████╗  ██████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
+    "██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║██║   ██║██║████╗ ████║",
+    "███████║███████╗   ██║   ██████╔╝██║   ██║██╔██╗ ██║██║   ██║██║██╔████╔██║",
+    "██╔══██║╚════██║   ██║   ██╔══██╗██║   ██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+    "██║  ██║███████║   ██║   ██║  ██║╚██████╔╝██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
+    "╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
+    "                                                                           ",
   },
 
   -- Default theme configuration
@@ -220,7 +219,7 @@ local config = {
       -- ["<esc>"] = false,
     },
     i = {
-       ["<Plug>(vimrc:copilot-dummy-map)"] = { "<cmd>call copilot#Accept(<Tab>)<CR>", desc = "Accept Copilot Completion" }
+      ["<Plug>(vimrc:copilot-dummy-map)"] = { "<cmd>call copilot#Accept(<Tab>)<CR>", desc = "Accept Copilot Completion" }
     }
   },
   -- Configure plugins
@@ -231,8 +230,8 @@ local config = {
 
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
-         { "github/copilot.vim" },
-         { "nvim-tree/nvim-web-devicons" }
+      { "github/copilot.vim" },
+      -- { "nvim-tree/nvim-web-devicons" }
       -- { "andweeb/presence.nvim" },
       -- {
       --   "ray-x/lsp_signature.nvim",
@@ -250,6 +249,27 @@ local config = {
       --   end,
       -- },
     },
+    ["heirline"] = function(config)
+      config[1] = {
+        -- set the fg/bg of the statusline
+        hl = { fg = "fg", bg = "bg" },
+        -- when adding the mode component, enable the mode text with padding to the left/right of it
+        astronvim.status.component.mode { mode_text = { padding = { left = 1, right = 1 } } },
+        -- add all the other components for the statusline
+        astronvim.status.component.git_branch(),
+        astronvim.status.component.file_info(),
+        astronvim.status.component.git_diff(),
+        astronvim.status.component.diagnostics(),
+        astronvim.status.component.fill(),
+        astronvim.status.component.macro_recording(),
+        astronvim.status.component.fill(),
+        astronvim.status.component.lsp(),
+        astronvim.status.component.treesitter(),
+        astronvim.status.component.nav(),
+      }
+      -- return the final configuration table
+      return config
+    end,
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup function call
@@ -306,14 +326,15 @@ local config = {
   cmp.setup {
     mapping = {
       ['<C-Enter>'] = cmp.mapping(function(fallback)
-        vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](vim.api.nvim_replace_termcodes('<Tab>', true, true, true)), 'n', true)
+        vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](vim.api.nvim_replace_termcodes('<Tab>', true, true, true)), 'n',
+          true)
       end)
     },
     experimental = {
       ghost_text = false -- this feature conflict with copilot.vim's preview.
     }
   },
- 
+
 
   -- Modify which-key registration (Use this with mappings table in the above.)
   ["which-key"] = {
