@@ -1,9 +1,12 @@
+
 --              AstroNvim Configuration Table
 -- All configuration changes should go inside of the table below
 
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
+local cmp = require('cmp')
+
 local config = {
 
   -- Configure AstroNvim updates
@@ -49,6 +52,8 @@ local config = {
       wrap = false, -- sets vim.opt.wrap
     },
     g = {
+      -- copilot_assume_mapped = true,
+      copilot_no_tab_map = true,
       mapleader = " ", -- sets vim.g.mapleader
       autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
       cmp_enabled = true, -- enable completion at start
@@ -214,8 +219,10 @@ local config = {
       -- setting a mapping to false will disable it
       -- ["<esc>"] = false,
     },
+    i = {
+       ["<Plug>(vimrc:copilot-dummy-map)"] = { "<cmd>call copilot#Accept(<Tab>)<CR>", desc = "Accept Copilot Completion" }
+    }
   },
-
   -- Configure plugins
   plugins = {
     init = {
@@ -224,6 +231,8 @@ local config = {
 
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
+         { "github/copilot.vim" },
+         { "nvim-tree/nvim-web-devicons" }
       -- { "andweeb/presence.nvim" },
       -- {
       --   "ray-x/lsp_signature.nvim",
@@ -258,7 +267,7 @@ local config = {
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
       -- ensure_installed = { "lua" },
-    },
+    }
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       -- ensure_installed = { "sumneko_lua" },
