@@ -267,7 +267,7 @@ local config = {
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
       -- ensure_installed = { "lua" },
-    }
+    },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       -- ensure_installed = { "sumneko_lua" },
@@ -302,6 +302,18 @@ local config = {
       path = 250,
     },
   },
+
+  cmp.setup {
+    mapping = {
+      ['<C-Enter>'] = cmp.mapping(function(fallback)
+        vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](vim.api.nvim_replace_termcodes('<Tab>', true, true, true)), 'n', true)
+      end)
+    },
+    experimental = {
+      ghost_text = false -- this feature conflict with copilot.vim's preview.
+    }
+  },
+ 
 
   -- Modify which-key registration (Use this with mappings table in the above.)
   ["which-key"] = {
