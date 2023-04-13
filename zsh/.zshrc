@@ -70,7 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf colored-man-pages brew aws node npm git)
+plugins=(git aws docker node asdf brew colored-man-pages docker-compose docker-machine gh nmap npm spring vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,4 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+VI_MODE_SET_CURSOR=true
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+MODE_INDICATOR="%F{cyan}N"
+INSERT_MODE_INDICATOR="%F{red}I"
+PROMPT="\$(vi_mode_prompt_info)$PROMPT"
