@@ -5,7 +5,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>Command</key>
-	<string>/opt/homebrew/bin/zsh</string>
+	<string></string>
 	<key>Default Bookmark Guid</key>
 	<string>C0575F1D-191B-4F60-B55E-C80DBC8F9C1B</string>
 	<key>DimBackgroundWindows</key>
@@ -867,7 +867,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCodeRoman-Regular 14</string>
+			<string>HackNerdFontCompleteM-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -986,7 +986,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.59999999999999998</real>
+	<real>0.22128166717233008</real>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabViewType</key>

@@ -1,9 +1,14 @@
-vim.g.mapleader = ' '
 require('settings')
 require('plugins.lazypath')
 require('plugins')
+require('plugins.catppuccin')
 require('plugins.lualine')
-
+require('plugins.neo-tree')
+require('plugins.bufferline')
+require('plugins.treesitter')
+--require('plugins.lsp-installer')
+require('plugins.mason')
+require('plugins.mason-lsp-config')
+require('plugins.lspconfig')
 
 require('keymaps')
-vim.cmd 'colorscheme material'

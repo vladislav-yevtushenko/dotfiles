@@ -1,0 +1,24 @@
+{
+    "workspace.library": [
+        "/Users/vlad/.config/nvim",
+        "/Users/vlad/.local/share/nvim/lazy/lazy.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/window-picker",
+        "/Users/vlad/.local/share/nvim/lazy/material.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/nui.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/neo-tree.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/nvim-lspconfig",
+        "/Users/vlad/.local/share/nvim/lazy/lualine-lsp-progress",
+        "/Users/vlad/.local/share/nvim/lazy/nvim-lsp-installer",
+        "/Users/vlad/.local/share/nvim/lazy/lualine.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/nvim-treesitter",
+        "/Users/vlad/.local/share/nvim/lazy/plenary.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/telescope.nvim",
+        "/Users/vlad/.local/share/nvim/lazy/nvim-web-devicons",
+        "/Users/vlad/.local/share/nvim/lazy/bufferline.nvim",
+        "/opt/homebrew/Cellar/neovim/0.9.0/share/nvim/runtime",
+        "/opt/homebrew/Cellar/neovim/0.9.0/share/nvim/runtime/pack/dist/opt/matchit",
+        "/opt/homebrew/Cellar/neovim/0.9.0/lib/nvim",
+        "/Users/vlad/.local/state/nvim/lazy/readme",
+        "${3rd}/luassert/library"
+    ]
+}
