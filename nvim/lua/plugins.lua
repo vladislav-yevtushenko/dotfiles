@@ -1,4 +1,4 @@
-plugins = { {
+local plugins = { {
 	{ 'nvim-treesitter/nvim-treesitter' },
 	{ 'nvim-telescope/telescope.nvim',  tag = '0.1.1', dependencies = { 'nvim-lua/plenary.nvim' } },
 	{
@@ -33,6 +33,9 @@ plugins = { {
 			vim.o.timeoutlen = 300
 		end,
 	},
+	{
+		"Pocco81/auto-save.nvim",
+	}
 
 } }
 

@@ -16,7 +16,7 @@ map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', noremap_silent)
 map('n', '<leader>f', ':Telescope find_files<CR>', noremap_silent)
 
 map('n', '<leader>e', ':NeoTreeFloatToggle buffers<CR>', noremap_silent)
-map('n', '<leader>1', ':NeoTreeRevealToggle<CR>', noremap_silent)
+map('n', '<leader>1', ':Neotre<CR>', noremap_silent)
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<C-f>', vim.diagnostic.open_float)
