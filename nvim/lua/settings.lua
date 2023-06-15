@@ -13,6 +13,10 @@ opt.smartcase = true
 opt.smartindent = true
 opt.so = 5
 opt.cursorline = true
+opt.splitright = true
+opt.splitbelow = true
+opt.fixeol = false
+opt.completeopt = 'menuone,noselect'
 
 -- Подсвечивает на доли секунды скопированную часть текста
 vim.api.nvim_exec([[
@@ -21,3 +25,9 @@ autocmd!
 autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=400}
 augroup end
 ]], false)
+
+vim.diagnostic.config(
+	{
+		virtual_text = false,
+		float = { border = 'single' }
+	})
