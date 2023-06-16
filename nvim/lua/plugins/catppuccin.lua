@@ -2,6 +2,7 @@ require("catppuccin").setup({
 	flavour = "mocha",
 	integrations = {
 		cmp = true,
+		coc_nvim  = false,
 		notify = true,
 		lsp_trouble = true,
 		telescope = true,
@@ -27,6 +28,7 @@ require("catppuccin").setup({
 		mocha = function(mocha)
 			return {
 				VertSplit = { fg = mocha.mauve },
+				NormalFloat = { bg = mocha.mauve }
 			}
 		end,
 	}

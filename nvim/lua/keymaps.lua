@@ -37,6 +37,7 @@ local function tm(key, command)
 	map('t', key, command, {noremap = true})
 end
 
+nm('<leader>lg',':LazyGit<CR>')
 
 
 local noremap_silent = { noremap = true, silent = true }
@@ -62,32 +63,15 @@ map('n', '<leader>so', ':SymbolsOutline<CR>', noremap_silent)
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 map('n', '<leader>6', ':TroubleToggle document_diagnostics<CR>', noremap_silent)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+--vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+--vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+-- Use `[g` and `]g` to navigate diagnostics
+--  Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+map('n', '[d', '<Plug>(coc-diagnostic-prev)', noremap_silent)
+map('n', ']d', '<Plug>(coc-diagnostic-next)', noremap_silent)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-	callback = function(ev)
-		-- Enable completion triggered by <c-x><c-o>
-		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+map('n', 'gd', '<Plug>(coc-definition)', noremap_silent)
+map('n', 'gy', '<Plug>(coc-type-definition)', noremap_silent)
+map('n', 'gi', '<Plug>(coc-implementation)', noremap_silent)
+map('n', 'gr', '<Plug>(coc-references)', noremap_silent)
 
-		-- Buffer local mappings.
-		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		local opts = { buffer = ev.buf }
-		vim.keymap.set('n', '<C-b>', vim.lsp.buf.declaration, opts)
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-		vim.keymap.set('n', '<space>wl', function()
-			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
-		vim.keymap.set('n', '<C-B>', vim.lsp.buf.type_definition, opts)
-		vim.keymap.set('n', '<S-r>', vim.lsp.buf.rename, opts)
-		vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-		vim.keymap.set('n', '<C-S-l>', function()
-			vim.lsp.buf.format { async = true }
-		end, opts)
-	end,
-})

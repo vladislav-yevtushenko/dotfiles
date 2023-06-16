@@ -17,29 +17,14 @@ local plugins = { {
 		version = "*",
 		config = true
 	},
-	{ 'simrat39/symbols-outline.nvim' },
+	{
+		'neoclide/coc.nvim',
+		branch = 'release'
+	},
 	{ 'vim-test/vim-test' },
 	{ "kyazdani42/nvim-web-devicons", name = 'nvim-web-devicons-kyazdani42' },
 	{ "folke/trouble.nvim", },
-	{
-		"L3MON4D3/LuaSnip",
-		version = "1.*",
-		build = "make install_jsregexp"
-	},
-	{
-		'hrsh7th/nvim-cmp',
-		dependencies = {
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-emoji',
-			'hrsh7th/cmp-nvim-lsp-signature-help',
-			'hrsh7th/cmp-nvim-lsp-document-symbol',
-			'hrsh7th/cmp-nvim-lua'
-		},
-	},
-	{ 'onsails/lspkind-nvim' },
+			{ 'onsails/lspkind-nvim' },
 	{
 		"kdheepak/lazygit.nvim",
 		-- optional for floating window border decoration

@@ -1,0 +1,19 @@
+{
+	"suggest.floatConfig": {
+		"border": true,
+		"highlight": "CocFloating"
+	},
+	"languageserver": {
+		"terraform": {
+			"command": "terraform-ls",
+			"args": [
+				"serve"
+			],
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+			"initializationOptions": {}
+		}
+	}
+}
