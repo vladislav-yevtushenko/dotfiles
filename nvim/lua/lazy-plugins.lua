@@ -12,6 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = { {
+--	{ 'mfussenegger/nvim-jdtls'},
+--	{ 'ray-x/lsp_signature.nvim' },
+	{ 'nvim-lua/lsp-status.nvim' },
+	{ 'sindrets/diffview.nvim' },
 	{
 		'akinsho/toggleterm.nvim',
 		version = "*",
@@ -24,7 +28,7 @@ local plugins = { {
 	{ 'vim-test/vim-test' },
 	{ "kyazdani42/nvim-web-devicons", name = 'nvim-web-devicons-kyazdani42' },
 	{ "folke/trouble.nvim", },
-			{ 'onsails/lspkind-nvim' },
+	{ 'onsails/lspkind-nvim' },
 	{
 		"kdheepak/lazygit.nvim",
 		-- optional for floating window border decoration

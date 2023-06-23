@@ -1,56 +1,31 @@
-local colors = {
-	yellow = '#ECBE7B',
-	cyan = '#008080',
-	darkblue = '#081633',
-	green = '#98be65',
-	orange = '#FF8800',
-	violet = '#a9a1e1',
-	magenta = '#c678dd',
-	blue = '#51afef',
-	red = '#ec5f67'
-}
-
-
-local lsp_progress_misc = {
-	'lsp_progress',
-	display_components = { 'lsp_client_name', { 'title', 'percentage', 'message' } },
-	colors = {
-		percentage      = colors.cyan,
-		title           = colors.cyan,
-		message         = colors.cyan,
-		spinner         = colors.cyan,
-		lsp_client_name = colors.magenta,
-		use             = true,
-	},
-	separators = {
-		--	component = ' ',
-		--		progress = ' | ',
-		message = { pre = '(', post = ')' },
-		percentage = { pre = '', post = '%% ' },
-		title = { pre = '', post = ': ' },
-		lsp_client_name = { pre = '|', post = '|' },
-		spinner = { pre = '', post = '' },
-		message = { commenced = 'In Progress', completed = 'Completed' },
-	},
-	display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' } },
-	timer = { progress_enddelay = 500, spinner = 300 },
-	spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
-}
 
 require("lualine").setup {
 	options = {
-		theme = "catppuccin",
+		theme = 'catppuccin',
 		icons_enabled = true,
-		--theme = 'gruvbox',
-		--component_separators = { '', '' },
-		--section_separators = { '', '' },
+		globalstatus = true,
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_c = { lsp_progress_misc, }
+		lualine_a = { 'mode', },
+		lualine_b = { 'branch', 'diff', 'diagnostics' },
+		lualine_c = { 'g:coc_status',  'data', "require'lsp-status'.status()" },
+		lualine_x = { 'encoding', 'fileformat', 'filetype' },
+		lualine_y = { 'progress' },
+		lualine_z = { 'location' }
 	},
 	extensions = {
 		"neo-tree",
 		"lazy",
+		"toggleterm",
+	},
+
+	winbar = {
+
+		lualine_x = { {
+			'filename',
+			file_status = true, -- Displays file status (readonly status, modified status)
+			newfile_status = false, -- Display new file status (new file means no write after created)
+			path = 1,
+		} },
 	}
 }

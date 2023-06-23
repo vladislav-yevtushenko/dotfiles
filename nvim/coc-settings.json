@@ -3,7 +3,11 @@
 		"border": true,
 		"highlight": "CocFloating"
 	},
+	"diagnostic.floatConfig": {
+		"border": true
+	},
 	"languageserver": {
+		
 		"terraform": {
 			"command": "terraform-ls",
 			"args": [
@@ -15,5 +19,13 @@
 			],
 			"initializationOptions": {}
 		}
-	}
+	},
+	"Lua.diagnostics.globals": [ "vim" ],
+	"java.enabled": true,
+	"java.import.maven.enabled": true,
+	"java.import.maven.offline.enabled": false,
+	"java.saveActions.organizeImports": true,
+	"codeLens.enable": true,
+	"java.referencesCodeLens.enabled": true,
+	"java.jdt.ls.vmargs": "-javaagent:/Users/vlad/lombok.jar -Xbootclasspath/a:/Users/vlad/lombok.jar"
 }

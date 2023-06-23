@@ -18,6 +18,10 @@ opt.splitbelow = true
 opt.fixeol = false
 opt.completeopt = 'menuone,noselect'
 
+opt.timeoutlen = 3300
+
+
+vim.timeoutlen = 3000
 -- Подсвечивает на доли секунды скопированную часть текста
 vim.api.nvim_exec([[
 augroup YankHighlight
