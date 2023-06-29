@@ -16,3 +16,4 @@ require('plugins.toggleterm')
 require('keymaps')
 require('plugins.coc')
 require('plugins.coc-notify-int')
+vim.o.timeoutlen = 2000

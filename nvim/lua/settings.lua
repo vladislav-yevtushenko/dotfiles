@@ -1,3 +1,9 @@
+local function add(value, str, sep)
+  sep = sep or ','
+  str = str or ''
+  value = type(value) == 'table' and table.concat(value, sep) or value
+  return str ~= '' and table.concat({ value, str }, sep) or value
+end
 vim.g.mapleader = ' '
 local opt = vim.opt
 
@@ -18,10 +24,11 @@ opt.splitbelow = true
 opt.fixeol = false
 opt.completeopt = 'menuone,noselect'
 
-opt.timeoutlen = 3300
-
-
-vim.timeoutlen = 3000
+vim.o.list = true
+vim.o.listchars = add {
+	'eol: ',
+	'tab:| ',
+}
 -- Подсвечивает на доли секунды скопированную часть текста
 vim.api.nvim_exec([[
 augroup YankHighlight
@@ -35,3 +42,7 @@ vim.diagnostic.config(
 		virtual_text = false,
 		float = { border = 'single' }
 	})
+
+
+
+

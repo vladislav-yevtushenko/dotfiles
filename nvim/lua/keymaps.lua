@@ -1,7 +1,6 @@
 local P = {}
 keymaps = P
 local map = vim.api.nvim_set_keymap
-
 local noremap = { noremap = true }
 local noremap_silent = { noremap = true, silent = true }
 --- Отключаем стрелочки в Нормальном Режиме. Хардкор!
@@ -30,32 +29,28 @@ function P.tm(key, command)
 	map('t', key, command, noremap)
 end
 
-function P.map_lsp_keys()
-	P.nmap_silent('<C-]', ':lua vim.lsp.buf.definition()<CR>')
-end
-
--- JAVA function P.map_java_keys(bufnr)
-function P.map_java_keys(bufnr)
-	P.map_lsp_keys()
-end
-
-P.imap_silent('<C-S-l>', '<esc>:CocCommand editor.action.formatDocument<CR>')
 P.vm('<C-h>', "y:%s/<c-r>=substitute(@\",\"\\\\n\",'\\\\n','g')<CR>")
 P.nmap_silent('<leader>lg', ':LazyGit<CR>')
 -- <F5> разные вариации нумераций строк, можно переключаться на ходу
 P.nmap_silent('<F5>', ':exec &nu==&rnu? "se nu!" : "se rnu!"<CR>')
--- Переключение вкладок с помощью TAB или shift-tab (akinsho/bufferline.nvim)
-P.nmap_silent('<Tab>', ':BufferLineCycleNext<CR>')
-P.nmap_silent('<S-Tab>', ':BufferLineCyclePrev<CR>')
 
+-- Telescope start section
+P.nmap_silent('<leader>lb', ':Telescope buffers<CR>')
 P.nmap_silent('<leader>ff', ':Telescope find_files<CR>')
 P.nmap_silent('<leader>fg', ':Telescope live_grep<CR>')
+P.nmap_silent('<leader>rg', ':Telescope registers<CR>')
+-- Telescope end section
 
+-- Neotree
 P.nmap_silent('<leader>2', ':NeoTreeShow buffers<CR>')
 P.nmap_silent('<leader>1', ':Neotree<CR>')
+-- Neotree
 
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-P.nmap_silent('<leader>6', ':TroubleToggle document_diagnostics<CR>')
+-- CocCommand start section
+P.nmap_silent('<F9>', ':CocCommand java.debug.vimspector.start<CR>')
+P.imap_silent('<C-S-l>', '<esc>:CocCommand editor.action.formatDocument<CR>')
+P.nmap_silent('<C-S-l>', ':CocCommand editor.action.formatDocument<CR>')
+
 P.nmap_silent('[d', '<Plug>(coc-diagnostic-prev)')
 P.nmap_silent(']d', '<Plug>(coc-diagnostic-next)')
 
@@ -63,7 +58,7 @@ P.nmap_silent('gd', '<Plug>(coc-definition)')
 P.nmap_silent('gy', '<Plug>(coc-type-definition)')
 P.nmap_silent('gi', '<Plug>(coc-implementation)')
 P.nmap_silent('gr', '<Plug>(coc-references)')
-
-P.nmap_silent('<C-S-l>', ':CocCommand editor.action.formatDocument<CR>')
-
+-- CocCommand end section
+P.nmap_silent('<leader>ft', ':ToggleTerm direction=float<CR>')
+P.nmap_silent('<leader>ht', ':ToggleTerm direction=horizontal<CR>')
 return P

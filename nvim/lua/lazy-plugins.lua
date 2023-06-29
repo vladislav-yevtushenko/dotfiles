@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = { {
 --	{ 'mfussenegger/nvim-jdtls'},
 --	{ 'ray-x/lsp_signature.nvim' },
+{ 'tpope/vim-surround'},
+{ 'puremourning/vimspector'},
 	{ 'nvim-lua/lsp-status.nvim' },
 	{ 'sindrets/diffview.nvim' },
 	{
@@ -27,7 +29,7 @@ local plugins = { {
 	},
 	{ 'vim-test/vim-test' },
 	{ "kyazdani42/nvim-web-devicons", name = 'nvim-web-devicons-kyazdani42' },
-	{ "folke/trouble.nvim", },
+--	{ "folke/trouble.nvim", },
 	{ 'onsails/lspkind-nvim' },
 	{
 		"kdheepak/lazygit.nvim",
