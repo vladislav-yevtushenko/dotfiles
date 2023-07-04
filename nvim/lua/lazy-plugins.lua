@@ -28,10 +28,6 @@ local plugins = { {
 		version = "*",
 		config = true
 	},
-	{
-		'neoclide/coc.nvim',
-		branch = 'release'
-	},
 	{ 'vim-test/vim-test' },
 	{ "kyazdani42/nvim-web-devicons", name = 'nvim-web-devicons-kyazdani42' },
 	--	{ "folke/trouble.nvim", },

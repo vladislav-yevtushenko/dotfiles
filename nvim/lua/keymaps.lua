@@ -46,19 +46,6 @@ P.nmap_silent('<leader>2', ':NeoTreeShow buffers<CR>')
 P.nmap_silent('<leader>1', ':Neotree<CR>')
 -- Neotree
 
--- CocCommand start section
-P.nmap_silent('<F9>', ':CocCommand java.debug.vimspector.start<CR>')
-P.imap_silent('<C-S-l>', '<esc>:CocCommand editor.action.formatDocument<CR>')
-P.nmap_silent('<C-S-l>', ':CocCommand editor.action.formatDocument<CR>')
-
-P.nmap_silent('[d', '<Plug>(coc-diagnostic-prev)')
-P.nmap_silent(']d', '<Plug>(coc-diagnostic-next)')
-
-P.nmap_silent('gd', '<Plug>(coc-definition)')
-P.nmap_silent('gy', '<Plug>(coc-type-definition)')
-P.nmap_silent('gi', '<Plug>(coc-implementation)')
-P.nmap_silent('gr', '<Plug>(coc-references)')
--- CocCommand end section
 P.nmap_silent('<leader>ft', ':ToggleTerm direction=float<CR>')
 P.nmap_silent('<leader>ht', ':ToggleTerm direction=horizontal<CR>')
 return P

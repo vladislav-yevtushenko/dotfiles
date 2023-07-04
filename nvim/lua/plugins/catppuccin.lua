@@ -2,7 +2,6 @@ require("catppuccin").setup({
 	flavour = 'frappe',
 	integrations = {
 		cmp         = true,
-		coc_nvim    = true,
 		notify      = true,
 		lsp_trouble = true,
 		telescope   = true,
