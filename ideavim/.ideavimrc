@@ -1,0 +1,80 @@
+let mapleader =  " "
+let g:highlightedyank_highlight_duration = "300"
+let g:WhichKeyDesc_goto = "g GoTo"
+let g:WhichKeyDesc_find = "<leader>\ Find"
+let g:WhichKeyDesc_code = "<leader>c Code"
+let g:WhichKeyDesc_show = "<leader>s Show"
+let g:WhichKeyDesc_show = "<leader>p Project"
+let g:WhichKeyDesc_show = "<leader>p RunMenu"
+let g:WhichKeyDesc_code_reformat_dialog = "<leader>F Reformat File Dialog"
+let g:WhichKeyDesc_code_reformat = "<leader>f Reformat Code"
+let g:WhichKeyDesc_code_refactor = "<leader>r Code Refactor"
+let g:WhichKeyDesc_code_refactor_rename = "<leader>rr Rename"
+let g:WhichKeyDesc_goto_declaration = "gd Declaration"
+let g:WhichKeyDesc_goto_class = "gC Class"
+let g:WhichKeyDesc_goto_file = "gF File"
+let g:WhichKeyDesc_goto_next_error = "g] Next Error"
+let g:WhichKeyDesc_goto_prev_error = "g[ Previous Error"
+let g:WhichKeyDesc_goto_implementations = "gi Implementation"
+let g:WhichKeyDesc_goto_implementation_sh = "gI Implementation Split Horizontally"
+let g:WhichKey_KeyColor = "red"
+set clipboard+=unnamed
+set relativenumber
+set ideajoin
+set showmode
+set ideamarks
+set notimeout 
+set timeoutlen=5000
+"""  plugins """
+set which-key
+Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
+""" keymaps """
+
+nmap <F3> :set hlsearch!<CR>
+nmap [<space> O<Esc>
+nmap ]<space> o<Esc>
+map <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>e <Action>(RecentFiles)
+map <leader>q <Action>(QuickJavaDoc)
+map <leader><S-e> <Action>(RecentLocations)
+map <leader>\g <Action>(FindInPath)
+map <leader>\w <Action>(FindWordAtCaret)
+map <leader>ss <Action>(FileStructurePopup)
+map <leader>si <Action>(ShowIntentionActions)
+nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(SplitHorizontally)<Action>(GotoImplementation)
+nmap gd <Action>(GotoDeclaration)
+nmap gum <Action>(GotoSuperMethod)
+nmap gnm <Action>(MethodDown)
+nmap gpm <Action>(MethodUp)
+nmap gC <Action>(GotoClass)
+nmap gF <Action>(GotoFile)
+nmap g] <Action>(GotoNextError)
+nmap g[ <Action>(GotoPreviousError)
+
+nmap <C-w><C-j> <Action>(StretchSplitToBottom)
+nmap <C-w><C-h> <Action>(StretchSplitToLeft)
+nmap <C-w><C-l> <Action>(StretchSplitToRight)
+nmap <C-w><C-k> <Action>(StretchSplitToTop)
+nmap <C-w>= <Action>(MaximizeEditorInSplit)
+nmap <C-w><space> <Action>(ChangeSplitOrientation)
+nmap <C-w>J <Action>(SplitHorizontally)
+nmap <C-w>L <Action>(SplitVertically)
+nmap <C-w>q <Action>(Unsplit)
+
+nmap <leader>F <Action>(ShowReformatFileDialog)
+nmap <leader>f <Action>(ReformatCode)
+nmap <leader>rr <Action>(RenameElement)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rf <Action>(IntroduceField)
+nmap <leader>rp <Action>(IntroduceParameter)
+nmap <leader>rc <Action>(IntroduceConstant)
+nmap <leader>rd <Action>(DelegateMethods)
+nmap <leader>pR <Action>(RunMenu)
+nmap <leader>pr <Action>(EditorPopupMenu.Run)
+nmap <leader>pd <Action>(ChooseDebugConfiguration)
+nmap <leader>ps <Action>(ChooseRunConfiguration)
+
+nmap tlb <Action>(ToggleLineBreakpoint)
