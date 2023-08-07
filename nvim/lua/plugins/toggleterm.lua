@@ -1,6 +1,6 @@
 require("toggleterm").setup {
 	direction = 'horizontal',
-	open_mapping = [[<leader>t]],
+	open_mapping = [[<C-\>t]],
 	float_opts = {
 		border = 'double'
 	},

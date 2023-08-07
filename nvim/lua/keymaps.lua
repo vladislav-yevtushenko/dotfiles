@@ -46,6 +46,7 @@ P.nmap_silent('<leader>2', ':NeoTreeShow buffers<CR>')
 P.nmap_silent('<leader>1', ':Neotree<CR>')
 -- Neotree
 
-P.nmap_silent('<leader>ft', ':ToggleTerm direction=float<CR>')
-P.nmap_silent('<leader>ht', ':ToggleTerm direction=horizontal<CR>')
+P.nmap_silent('<C-\\>ft', ':ToggleTerm direction=float<CR>')
+P.nmap_silent('<C-\\>ht', ':ToggleTerm direction=horizontal<CR>')
+
 return P

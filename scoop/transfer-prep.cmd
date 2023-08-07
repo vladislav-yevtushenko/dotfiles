@@ -16,6 +16,8 @@ type NUL > "%outputScript%"
 (
     echo Write-Host "Checking if Scoop is installed..."
     echo if (-not (Get-Command -Name 'scoop' -ErrorAction SilentlyContinue^)^) {
+    echo     Write-Host "setup git to ignore self signed cert"
+    echo     ^git config --global http.sslVerify false
     echo     Write-Host "Setting PowerShell Execution Policy to RemoteSigned for the current user..."
     echo     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
     echo     Write-Host "Scoop not found, installing..."
