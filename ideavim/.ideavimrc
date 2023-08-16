@@ -18,6 +18,7 @@ let g:WhichKeyDesc_goto_prev_error = "g[ Previous Error"
 let g:WhichKeyDesc_goto_implementations = "gi Implementation"
 let g:WhichKeyDesc_goto_implementation_sh = "gI Implementation Split Horizontally"
 let g:WhichKey_KeyColor = "red"
+
 set clipboard+=unnamed
 set relativenumber
 set ideajoin
@@ -73,8 +74,13 @@ nmap <leader>rp <Action>(IntroduceParameter)
 nmap <leader>rc <Action>(IntroduceConstant)
 nmap <leader>rd <Action>(DelegateMethods)
 nmap <leader>pR <Action>(RunMenu)
+nmap <leader>pz <Action>(Rerun)
 nmap <leader>pr <Action>(EditorPopupMenu.Run)
 nmap <leader>pd <Action>(ChooseDebugConfiguration)
 nmap <leader>ps <Action>(ChooseRunConfiguration)
 
 nmap tlb <Action>(ToggleLineBreakpoint)
+map <C-r> <Action>(Replace) 
+
+nmap <C-O> <Action>(Back)
+nmap <C-I> <Action>(Forward)

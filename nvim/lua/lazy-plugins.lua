@@ -19,6 +19,7 @@ local plugins = { {
 		event = "CmdlineEnter",
 		cmd = "Hypersonic",
 	},
+	{ 'preservim/nerdtree'},
 	{ 'tpope/vim-surround' },
 	{ 'puremourning/vimspector' },
 	{ 'nvim-lua/lsp-status.nvim' },
@@ -59,15 +60,6 @@ local plugins = { {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000
-	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim"
-		}
 	},
 	{
 		'akinsho/bufferline.nvim',
