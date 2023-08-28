@@ -1,11 +1,11 @@
 let mapleader =  " "
 let g:highlightedyank_highlight_duration = "300"
 let g:WhichKeyDesc_goto = "g GoTo"
-let g:WhichKeyDesc_find = "<leader>\ Find"
-let g:WhichKeyDesc_code = "<leader>c Code"
+let g:WhichKeyDesc_find = "<leader>\\ Find"
 let g:WhichKeyDesc_show = "<leader>s Show"
-let g:WhichKeyDesc_show = "<leader>p Project"
-let g:WhichKeyDesc_show = "<leader>p RunMenu"
+let g:WhichKeyDesc_splits = "<leader>S Splits"
+let g:WhichKeyDesc_project = "<leader>p Project"
+let g:WhichKeyDesc_breakpoints  "<leader>b Breakpoints"
 let g:WhichKeyDesc_code_reformat_dialog = "<leader>F Reformat File Dialog"
 let g:WhichKeyDesc_code_reformat = "<leader>f Reformat Code"
 let g:WhichKeyDesc_code_refactor = "<leader>r Code Refactor"
@@ -18,6 +18,17 @@ let g:WhichKeyDesc_goto_prev_error = "g[ Previous Error"
 let g:WhichKeyDesc_goto_implementations = "gi Implementation"
 let g:WhichKeyDesc_goto_implementation_sh = "gI Implementation Split Horizontally"
 let g:WhichKey_KeyColor = "red"
+let g:WhichKey_KeyStyle = "bold"
+let g:WhichKey_ShowVimActions = "true"
+let g:WhichKey_FontFamily = "Hack Nerd Font"
+let g:WhichKey_Divider = "  "
+let g:WhichKey_FontSize = "12"
+
+let g:WhichKey_ShowTypedSequence = "false"
+" make the popup appear much slower
+let g:WhichKey_DefaultDelay = 600
+" close the popup and don't process formerly typed keys
+let g:WhichKey_ProcessUnknownMappings = "false"
 
 set clipboard+=unnamed
 set relativenumber
@@ -60,9 +71,6 @@ nmap <C-w><C-l> <Action>(StretchSplitToRight)
 nmap <C-w><C-k> <Action>(StretchSplitToTop)
 nmap <C-w>= <Action>(MaximizeEditorInSplit)
 nmap <C-w><space> <Action>(ChangeSplitOrientation)
-nmap <C-w>J <Action>(SplitHorizontally)
-nmap <C-w>L <Action>(SplitVertically)
-nmap <C-w>q <Action>(Unsplit)
 
 nmap <leader>F <Action>(ShowReformatFileDialog)
 nmap <leader>f <Action>(ReformatCode)
@@ -74,13 +82,20 @@ nmap <leader>rp <Action>(IntroduceParameter)
 nmap <leader>rc <Action>(IntroduceConstant)
 nmap <leader>rd <Action>(DelegateMethods)
 nmap <leader>pR <Action>(RunMenu)
+nmap <leader>pB <Action>(BuildMenu)
 nmap <leader>pz <Action>(Rerun)
 nmap <leader>pr <Action>(EditorPopupMenu.Run)
 nmap <leader>pd <Action>(ChooseDebugConfiguration)
 nmap <leader>ps <Action>(ChooseRunConfiguration)
 
-nmap tlb <Action>(ToggleLineBreakpoint)
+nmap <leader>bl <Action>(ToggleLineBreakpoint)
+nmap <leader>bs <Action>(ViewBreakpoints)
 map <C-r> <Action>(Replace) 
 
 nmap <C-O> <Action>(Back)
 nmap <C-I> <Action>(Forward)
+
+nmap <leader>Sm <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>SJ <Action>(SplitHorizontally)
+nmap <leader>SL <Action>(SplitVertically)
+nmap <leader>Sq <Action>(UnsplitAll)
