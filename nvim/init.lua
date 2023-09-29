@@ -15,4 +15,5 @@ require('plugins.telescope')
 require('plugins.toggleterm')
 require('keymaps')
 require('plugins.hypersonic')
+require('plugins.which-key')
 vim.o.timeoutlen = 2000

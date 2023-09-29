@@ -24,6 +24,9 @@ opt.splitbelow = true
 opt.fixeol = false
 opt.completeopt = 'menuone,noselect'
 
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+
 vim.o.list = true
 vim.o.listchars = add {
 	'eol: ',

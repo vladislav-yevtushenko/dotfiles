@@ -14,12 +14,23 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = { {
 	--	{ 'mfussenegger/nvim-jdtls'},
 	--	{ 'ray-x/lsp_signature.nvim' },
+{
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+},{
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  },
 	{
 		'tomiis4/Hypersonic.nvim',
 		event = "CmdlineEnter",
 		cmd = "Hypersonic",
 	},
-	{ 'preservim/nerdtree'},
 	{ 'tpope/vim-surround' },
 	{ 'puremourning/vimspector' },
 	{ 'nvim-lua/lsp-status.nvim' },
