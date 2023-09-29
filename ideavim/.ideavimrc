@@ -30,30 +30,37 @@ let g:WhichKey_DefaultDelay = 600
 " close the popup and don't process formerly typed keys
 let g:WhichKey_ProcessUnknownMappings = "false"
 
+
+
 set clipboard+=unnamed
-set relativenumber
-set ideajoin
 set showmode
-set ideamarks
 set notimeout 
 set timeoutlen=5000
 """  plugins """
+set commentary
 set which-key
+set ideamarks
+set ideajoin
+""" set sneak
+set quickscope
+set commentary
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
+let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 """ keymaps """
 
 nmap <F3> :set hlsearch!<CR>
 nmap [<space> O<Esc>
 nmap ]<space> o<Esc>
-map <leader>t <Action>(ActivateTerminalToolWindow)
-map <leader>e <Action>(RecentFiles)
-map <leader>q <Action>(QuickJavaDoc)
-map <leader><S-e> <Action>(RecentLocations)
-map <leader>\g <Action>(FindInPath)
-map <leader>\w <Action>(FindWordAtCaret)
-map <leader>ss <Action>(FileStructurePopup)
-map <leader>si <Action>(ShowIntentionActions)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+nmap <leader>e <Action>(RecentFiles)
+nmap <leader>q <Action>(QuickJavaDoc)
+nmap <leader>E <Action>(RecentLocations)
+nmap <leader>\g <Action>(FindInPath)
+nmap <leader>\w <Action>(FindWordAtCaret)
+nmap <leader>ss <Action>(FileStructurePopup)
+nmap <leader>si <Action>(ShowIntentionActions)
+nmap <leader>se <Action>(ShowErrorDescription)
 nmap gi <Action>(GotoImplementation)
 nmap gI <Action>(SplitHorizontally)<Action>(GotoImplementation)
 nmap gd <Action>(GotoDeclaration)
@@ -99,3 +106,6 @@ nmap <leader>Sm <Action>(MoveEditorToOppositeTabGroup)
 nmap <leader>SJ <Action>(SplitHorizontally)
 nmap <leader>SL <Action>(SplitVertically)
 nmap <leader>Sq <Action>(UnsplitAll)
+nmap <leader>cl <Plug>CommentaryLine
+nmap <leader>cc <Plug>Commentary
+nmap <leader>cu <Plug>Commentary<Plug>Commentary
