@@ -20,10 +20,8 @@ opt.smartindent = true
 opt.so = 5
 opt.cursorline = true
 opt.splitright = true
-opt.splitbelow = true
 opt.fixeol = false
 opt.completeopt = 'menuone,noselect'
-
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
@@ -46,6 +44,5 @@ vim.diagnostic.config(
 		float = { border = 'single' }
 	})
 
-
-
+vim.opt.path:append '**' -- this one for recursive find
 

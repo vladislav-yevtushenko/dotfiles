@@ -32,22 +32,36 @@ let g:WhichKey_ProcessUnknownMappings = "false"
 
 
 
-set clipboard+=unnamed
+set scrolloff=10
 set showmode
-set notimeout 
+set showcmd
+set visualbell
+set clipboard+=unnamed
+set ignorecase
+set smartcase " tells Vim that if any of the search characters are uppercase, treat the search as case-sensitive.
+set incsearch " tells Vim to start searching as you type, rather than waiting for you to submit the complete search string first.
+set hlsearch
+set notimeout
 set timeoutlen=5000
 """  plugins """
 set commentary
 set which-key
 set ideamarks
 set ideajoin
-""" set sneak
 set quickscope
 set commentary
-Plug 'tpope/vim-surround'
-Plug 'machakann/vim-highlightedyank'
+set surround
+set highlightedyank
+set nerdtree
 let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 """ keymaps """
+" Display options
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
+
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
 
 nmap <F3> :set hlsearch!<CR>
 nmap [<space> O<Esc>
@@ -81,6 +95,7 @@ nmap <C-w><space> <Action>(ChangeSplitOrientation)
 
 nmap <leader>F <Action>(ShowReformatFileDialog)
 nmap <leader>f <Action>(ReformatCode)
+
 nmap <leader>rr <Action>(RenameElement)
 nmap <leader>rv <Action>(IntroduceVariable)
 map <leader>rm <Action>(ExtractMethod)
@@ -88,6 +103,9 @@ nmap <leader>rf <Action>(IntroduceField)
 nmap <leader>rp <Action>(IntroduceParameter)
 nmap <leader>rc <Action>(IntroduceConstant)
 nmap <leader>rd <Action>(DelegateMethods)
+nmap <leader>rq <Action>(Refactorings.QuickListPopupAction)
+
+
 nmap <leader>pR <Action>(RunMenu)
 nmap <leader>pB <Action>(BuildMenu)
 nmap <leader>pz <Action>(Rerun)
