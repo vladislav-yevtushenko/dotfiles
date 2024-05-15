@@ -5,7 +5,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>Command</key>
-	<string></string>
+	<string>/opt/homebrew/bin/zsh</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>PaleNightHC</key>
@@ -617,7 +617,9 @@
 				<real>0.13329572975635529</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string></string>
+			<string>/Users/vlad/Downloads/apple_galaxy.jpg</string>
+			<key>Background Image Mode</key>
+			<integer>2</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -632,13 +634,13 @@
 				<real>1</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.19363252943840586</real>
+			<real>0.31394219882246382</real>
 			<key>Blinking Cursor</key>
-			<true/>
+			<false/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>9.4134391622340434</real>
+			<real>20.552036236702129</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -745,7 +747,7 @@
 			<key>Initial Text</key>
 			<string></string>
 			<key>Initial Use Transparency</key>
-			<true/>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1273,7 +1275,7 @@
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1283,7 +1285,7 @@
 			<key>Title Components</key>
 			<integer>2</integer>
 			<key>Transparency</key>
-			<real>0.17667885638297873</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1305,7 +1307,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/vlad</string>
 		</dict>
