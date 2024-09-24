@@ -1,2 +1,38 @@
 [font]
-size = 14
+size = 15
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[colors.primary]
+background = "0x1f2329"
+foreground = "0xa0a8b7"
+
+[env]
+TERM = "xterm-256color"
+[scrolling]
+multiplier = 1
+history = 10000
+
+[[keyboard.bindings]]
+key = "Up"
+mods = "Command"
+action = "ScrollLineUp"
+
+[[keyboard.bindings]]
+key = "Down"
+mods = "Command"
+action = "ScrollLineDown"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Command"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Command"
+action = "ScrollPageDown"
