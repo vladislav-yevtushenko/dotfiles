@@ -1,6 +1,0 @@
-require('settings')
-require('lazy-plugins')
-require('plugins.catppuccin')
-require('plugins.lualine')
-require('plugins.auto-save')
---require('keymaps')
