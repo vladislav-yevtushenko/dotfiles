@@ -122,6 +122,12 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-alias ls="eza --icons=always"
-eval "$(zoxide init zsh)"
-alias cd="z"
+EDITOR="nvim"
+VISUAL="zed"
+alias vim=nvim
+alias vi=nvim
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
