@@ -80,7 +80,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws node asdf brew colored-man-pages gh nmap npm spring)
+plugins=(asdf git aws node asdf brew colored-man-pages gh nmap npm spring)
 
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
@@ -133,3 +133,9 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias fzf='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}" | xargs -I{} realpath "{}" | pbcopy'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/vlad/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/completion.zsh.inc'; fi

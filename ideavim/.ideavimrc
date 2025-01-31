@@ -86,13 +86,6 @@ nmap gF <Action>(GotoFile)
 nmap g] <Action>(GotoNextError)
 nmap g[ <Action>(GotoPreviousError)
 
-nmap <C-w><C-j> <Action>(StretchSplitToBottom)
-nmap <C-w><C-h> <Action>(StretchSplitToLeft)
-nmap <C-w><C-l> <Action>(StretchSplitToRight)
-nmap <C-w><C-k> <Action>(StretchSplitToTop)
-nmap <C-w>= <Action>(MaximizeEditorInSplit)
-nmap <C-w><space> <Action>(ChangeSplitOrientation)
-
 nmap <leader>F <Action>(ShowReformatFileDialog)
 nmap <leader>f <Action>(ReformatCode)
 
@@ -115,7 +108,7 @@ nmap <leader>ps <Action>(ChooseRunConfiguration)
 
 nmap <leader>bl <Action>(ToggleLineBreakpoint)
 nmap <leader>bs <Action>(ViewBreakpoints)
-map <C-r> <Action>(Replace) 
+map <C-r> <Action>(Replace)
 
 nmap <C-O> <Action>(Back)
 nmap <C-I> <Action>(Forward)
@@ -124,6 +117,13 @@ nmap <leader>Sm <Action>(MoveEditorToOppositeTabGroup)
 nmap <leader>SJ <Action>(SplitHorizontally)
 nmap <leader>SL <Action>(SplitVertically)
 nmap <leader>Sq <Action>(UnsplitAll)
+nmap <leader>Sc <Action>(SplitChooser)
+nmap <leader>S<Down> <Action>(StretchSplitToBottom)
+nmap <leader>S<Left> <Action>(StretchSplitToLeft)
+nmap <leader>S<Right> <Action>(StretchSplitToRight)
+nmap <leader>S<Up> <Action>(StretchSplitToTop)
+nmap <leader>S= <Action>(MaximizeEditorInSplit)
+nmap <leader>S<Space> <Action>(ChangeSplitOrientation)
 nmap <leader>cl <Plug>CommentaryLine
 nmap <leader>cc <Plug>Commentary
 nmap <leader>cu <Plug>Commentary<Plug>Commentary
