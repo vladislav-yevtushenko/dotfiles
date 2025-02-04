@@ -1,0 +1,67 @@
+{
+  "actions" : [
+    {
+      "value" : "/System/Applications/Utilities/Terminal.app",
+      "type" : "application",
+      "key" : "t",
+      "label" : ""
+    },
+    {
+      "key" : "o",
+      "type" : "group",
+      "label" : "",
+      "actions" : [
+        {
+          "label" : "",
+          "value" : "/Applications/Safari.app",
+          "key" : "s",
+          "type" : "application"
+        },
+        {
+          "label" : "",
+          "value" : "/Applications/Mail.app",
+          "key" : "e",
+          "type" : "application"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app",
+          "label" : ""
+        },
+        {
+          "value" : "/Applications/Messages.app",
+          "key" : "m",
+          "label" : "",
+          "type" : "application"
+        }
+      ]
+    },
+    {
+      "label" : "",
+      "key" : "r",
+      "actions" : [
+        {
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
+          "key" : "e",
+          "type" : "url",
+          "label" : ""
+        },
+        {
+          "key" : "p",
+          "label" : "",
+          "type" : "url",
+          "value" : "raycast://confetti"
+        },
+        {
+          "key" : "c",
+          "type" : "url",
+          "label" : "",
+          "value" : "raycast://extensions/raycast/system/open-camera"
+        }
+      ],
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}
