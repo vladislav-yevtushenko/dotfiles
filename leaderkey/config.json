@@ -1,66 +1,48 @@
 {
   "actions" : [
     {
-      "value" : "/System/Applications/Utilities/Terminal.app",
-      "type" : "application",
-      "key" : "t",
-      "label" : ""
-    },
-    {
-      "key" : "o",
-      "type" : "group",
-      "label" : "",
       "actions" : [
         {
-          "label" : "",
-          "value" : "/Applications/Safari.app",
-          "key" : "s",
-          "type" : "application"
+          "type" : "application",
+          "key" : "w",
+          "value" : "/Applications/WezTerm.app",
+          "label" : "WezTerm"
         },
         {
-          "label" : "",
-          "value" : "/Applications/Mail.app",
-          "key" : "e",
-          "type" : "application"
+          "type" : "application",
+          "key" : "y",
+          "value" : "/Applications/Yandex Music.app",
+          "label" : ""
         },
         {
           "key" : "i",
+          "label" : "",
           "type" : "application",
-          "value" : "/System/Applications/Music.app",
-          "label" : ""
+          "value" : "/Applications/IntelliJ IDEA.app"
         },
         {
-          "value" : "/Applications/Messages.app",
-          "key" : "m",
+          "key" : "z",
+          "value" : "/Applications/Zed.app",
           "label" : "",
           "type" : "application"
         }
-      ]
+      ],
+      "type" : "group",
+      "key" : "o",
+      "label" : "Open"
     },
     {
-      "label" : "",
-      "key" : "r",
+      "label" : "Keyboard",
+      "type" : "group",
+      "key" : "k",
       "actions" : [
         {
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
-          "key" : "e",
-          "type" : "url",
-          "label" : ""
-        },
-        {
-          "key" : "p",
-          "label" : "",
-          "type" : "url",
-          "value" : "raycast://confetti"
-        },
-        {
-          "key" : "c",
-          "type" : "url",
-          "label" : "",
-          "value" : "raycast://extensions/raycast/system/open-camera"
+          "label" : "Switch Keyboard Layout",
+          "type" : "command",
+          "value" : "",
+          "key" : "s"
         }
-      ],
-      "type" : "group"
+      ]
     }
   ],
   "type" : "group"
