@@ -1,48 +1,54 @@
 {
   "actions" : [
     {
+      "type" : "group",
+      "label" : "Open",
       "actions" : [
         {
-          "type" : "application",
           "key" : "w",
           "value" : "/Applications/WezTerm.app",
-          "label" : "WezTerm"
+          "label" : "WezTerm",
+          "type" : "application"
         },
         {
-          "type" : "application",
-          "key" : "y",
           "value" : "/Applications/Yandex Music.app",
+          "key" : "y",
+          "type" : "application",
           "label" : ""
         },
         {
-          "key" : "i",
-          "label" : "",
           "type" : "application",
-          "value" : "/Applications/IntelliJ IDEA.app"
+          "label" : "",
+          "value" : "/Applications/IntelliJ IDEA.app",
+          "key" : "i"
         },
         {
-          "key" : "z",
-          "value" : "/Applications/Zed.app",
           "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Zed.app",
+          "key" : "z"
+        },
+        {
+          "key" : "g",
+          "label" : null,
+          "value" : "/Applications/ChatGPT.app",
           "type" : "application"
         }
       ],
-      "type" : "group",
-      "key" : "o",
-      "label" : "Open"
+      "key" : "o"
     },
     {
-      "label" : "Keyboard",
       "type" : "group",
-      "key" : "k",
+      "label" : "Keyboard",
       "actions" : [
         {
-          "label" : "Switch Keyboard Layout",
+          "key" : "s",
           "type" : "command",
           "value" : "",
-          "key" : "s"
+          "label" : "Switch Keyboard Layout"
         }
-      ]
+      ],
+      "key" : "k"
     }
   ],
   "type" : "group"

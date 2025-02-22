@@ -89,6 +89,16 @@ plugins=(asdf git aws node asdf brew colored-man-pages gh nmap npm spring)
 
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude .git . "$1"
+}
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude .git . "$1"
+}
 
 # User configuration
 
@@ -148,3 +158,6 @@ if [ -f '/Users/vlad/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vlad/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval $(thefuck --alias)
+
