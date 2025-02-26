@@ -1,54 +1,109 @@
 {
   "actions" : [
     {
-      "type" : "group",
-      "label" : "Open",
       "actions" : [
         {
           "key" : "w",
-          "value" : "/Applications/WezTerm.app",
           "label" : "WezTerm",
+          "type" : "application",
+          "value" : "/Applications/WezTerm.app"
+        },
+        {
+          "label" : "",
+          "key" : "y",
+          "value" : "/Applications/Yandex Music.app",
           "type" : "application"
         },
         {
-          "value" : "/Applications/Yandex Music.app",
-          "key" : "y",
+          "key" : "i",
           "type" : "application",
+          "value" : "/Applications/IntelliJ IDEA.app",
           "label" : ""
         },
         {
           "type" : "application",
+          "key" : "z",
           "label" : "",
-          "value" : "/Applications/IntelliJ IDEA.app",
-          "key" : "i"
+          "value" : "/Applications/Zed.app"
+        },
+        {
+          "value" : "/Applications/ChatGPT.app",
+          "label" : "",
+          "key" : "g",
+          "type" : "application"
+        },
+        {
+          "value" : "/System/Applications/Reminders.app",
+          "key" : "r",
+          "label" : "",
+          "type" : "application"
+        },
+        {
+          "type" : "application",
+          "value" : "/Applications/Microsoft Outlook.app",
+          "label" : "",
+          "key" : "o"
         },
         {
           "label" : "",
           "type" : "application",
-          "value" : "/Applications/Zed.app",
-          "key" : "z"
-        },
-        {
-          "key" : "g",
-          "label" : null,
-          "value" : "/Applications/ChatGPT.app",
-          "type" : "application"
+          "key" : "t",
+          "value" : "/Applications/Microsoft Teams.app"
         }
       ],
-      "key" : "o"
+      "type" : "group",
+      "key" : "o",
+      "label" : "Open"
     },
     {
       "type" : "group",
       "label" : "Keyboard",
       "actions" : [
         {
-          "key" : "s",
-          "type" : "command",
           "value" : "",
-          "label" : "Switch Keyboard Layout"
+          "key" : "s",
+          "label" : "Switch Keyboard Layout",
+          "type" : "command"
         }
       ],
       "key" : "k"
+    },
+    {
+      "actions" : [
+        {
+          "type" : "url",
+          "label" : "maximize",
+          "key" : "m",
+          "value" : "raycast://extensions/raycast/window-management/maximize"
+        },
+        {
+          "label" : "top half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/top-half",
+          "key" : "1"
+        },
+        {
+          "key" : "2",
+          "value" : "raycast://extensions/raycast/window-management/bottom-half",
+          "label" : "bottom half",
+          "type" : "url"
+        },
+        {
+          "label" : "previous desktop",
+          "value" : "raycast://extensions/raycast/window-management/previous-display",
+          "type" : "url",
+          "key" : "h"
+        },
+        {
+          "type" : "url",
+          "key" : "l",
+          "label" : "next desktop",
+          "value" : "raycast://extensions/raycast/window-management/next-display"
+        }
+      ],
+      "type" : "group",
+      "key" : "w",
+      "label" : "Window Management"
     }
   ],
   "type" : "group"

@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 config.check_for_updates = true
 config.term = "xterm-256color"
 config.use_ime = true
-config.color_scheme = "Tokyo Night Storm (Gogh)"
+config.color_scheme = "Desert"
 config.font_size = 14.0
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false })
 config.window_decorations = "RESIZE"
@@ -83,11 +83,11 @@ config.colors = {
 	tab_bar = {
 		active_tab = {
 			fg_color = "#073642",
-			bg_color = "#6699CC",
+			bg_color = "#c5aa00",
 			intensity = "Normal",
 		},
 		inactive_tab = {
-			bg_color = "#1a1b26",
+			bg_color = "#a39900",
 			fg_color = "#4c566a",
 		},
 	},
