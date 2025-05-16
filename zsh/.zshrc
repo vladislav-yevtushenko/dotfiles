@@ -85,7 +85,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf git aws node asdf brew colored-man-pages gh nmap npm spring)
+plugins=(asdf git aws node brew colored-man-pages gh nmap npm spring)
 
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
@@ -105,7 +105,7 @@ _fzf_compgen_dir() {
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -139,7 +139,7 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 
 EDITOR="nvim"
@@ -152,6 +152,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias fzf='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}" | xargs -I{} realpath "{}" | pbcopy'
+alias dirs='dirs -lpv'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/vlad/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/path.zsh.inc'; fi
@@ -161,3 +162,8 @@ if [ -f '/Users/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vlad
 
 eval $(thefuck --alias)
 
+# enable glab completion
+source <(glab completion -s zsh); compdef _glab glab
+
+# enable history time stamp
+export HISTTIMEFORMAT="%d/%m/%y %T"

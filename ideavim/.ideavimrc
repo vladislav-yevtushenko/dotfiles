@@ -124,6 +124,6 @@ nmap <leader>S<Right> <Action>(StretchSplitToRight)
 nmap <leader>S<Up> <Action>(StretchSplitToTop)
 nmap <leader>S= <Action>(MaximizeEditorInSplit)
 nmap <leader>S<Space> <Action>(ChangeSplitOrientation)
-nmap <leader>cl <Plug>CommentaryLine
-nmap <leader>cc <Plug>Commentary
-nmap <leader>cu <Plug>Commentary<Plug>Commentary
+map <leader>cl <Plug>CommentaryLine
+map <leader>cc <Plug>Commentary
+map <leader>cu <Plug>Commentary<Plug>Commentary

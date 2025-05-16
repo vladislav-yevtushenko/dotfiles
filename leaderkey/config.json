@@ -1,54 +1,55 @@
 {
+  "type" : "group",
   "actions" : [
     {
       "actions" : [
         {
+          "value" : "/Applications/WezTerm.app",
           "key" : "w",
-          "label" : "WezTerm",
           "type" : "application",
-          "value" : "/Applications/WezTerm.app"
+          "label" : "WezTerm"
+        },
+        {
+          "type" : "application",
+          "key" : "y",
+          "label" : "",
+          "value" : "/Applications/Yandex Music.app"
         },
         {
           "label" : "",
-          "key" : "y",
-          "value" : "/Applications/Yandex Music.app",
+          "key" : "i",
+          "value" : "/Applications/IntelliJ IDEA.app",
           "type" : "application"
         },
         {
-          "key" : "i",
+          "key" : "z",
+          "label" : "",
+          "value" : "/Applications/Zed.app",
+          "type" : "application"
+        },
+        {
           "type" : "application",
-          "value" : "/Applications/IntelliJ IDEA.app",
+          "label" : "",
+          "value" : "/Applications/ChatGPT.app",
+          "key" : "g"
+        },
+        {
+          "type" : "application",
+          "value" : "/System/Applications/Reminders.app",
+          "key" : "r",
           "label" : ""
         },
         {
           "type" : "application",
-          "key" : "z",
           "label" : "",
-          "value" : "/Applications/Zed.app"
+          "key" : "o",
+          "value" : "/Applications/Microsoft Outlook.app"
         },
         {
-          "value" : "/Applications/ChatGPT.app",
-          "label" : "",
-          "key" : "g",
-          "type" : "application"
-        },
-        {
-          "value" : "/System/Applications/Reminders.app",
-          "key" : "r",
-          "label" : "",
-          "type" : "application"
-        },
-        {
-          "type" : "application",
-          "value" : "/Applications/Microsoft Outlook.app",
-          "label" : "",
-          "key" : "o"
-        },
-        {
-          "label" : "",
+          "value" : "/Applications/Microsoft Teams.app",
           "type" : "application",
           "key" : "t",
-          "value" : "/Applications/Microsoft Teams.app"
+          "label" : ""
         }
       ],
       "type" : "group",
@@ -56,55 +57,54 @@
       "label" : "Open"
     },
     {
-      "type" : "group",
-      "label" : "Keyboard",
       "actions" : [
         {
           "value" : "",
-          "key" : "s",
+          "type" : "command",
           "label" : "Switch Keyboard Layout",
-          "type" : "command"
+          "key" : "s"
         }
       ],
+      "type" : "group",
+      "label" : "Keyboard",
       "key" : "k"
     },
     {
       "actions" : [
         {
-          "type" : "url",
-          "label" : "maximize",
+          "value" : "raycast://extensions/raycast/window-management/maximize",
           "key" : "m",
-          "value" : "raycast://extensions/raycast/window-management/maximize"
-        },
-        {
-          "label" : "top half",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/top-half",
-          "key" : "1"
-        },
-        {
-          "key" : "2",
-          "value" : "raycast://extensions/raycast/window-management/bottom-half",
-          "label" : "bottom half",
+          "label" : "maximize",
           "type" : "url"
         },
         {
-          "label" : "previous desktop",
-          "value" : "raycast://extensions/raycast/window-management/previous-display",
           "type" : "url",
-          "key" : "h"
+          "value" : "raycast://extensions/raycast/window-management/top-half",
+          "key" : "k",
+          "label" : "top half"
         },
         {
           "type" : "url",
+          "key" : "j",
+          "label" : "bottom half",
+          "value" : "raycast://extensions/raycast/window-management/bottom-half"
+        },
+        {
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/previous-display",
+          "key" : "h",
+          "label" : "previous desktop"
+        },
+        {
           "key" : "l",
           "label" : "next desktop",
+          "type" : "url",
           "value" : "raycast://extensions/raycast/window-management/next-display"
         }
       ],
-      "type" : "group",
       "key" : "w",
-      "label" : "Window Management"
+      "label" : "Window Management",
+      "type" : "group"
     }
-  ],
-  "type" : "group"
+  ]
 }
