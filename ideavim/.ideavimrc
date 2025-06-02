@@ -26,7 +26,7 @@ let g:WhichKey_FontSize = "12"
 
 let g:WhichKey_ShowTypedSequence = "false"
 " make the popup appear much slower
-let g:WhichKey_DefaultDelay = 600
+let g:WhichKey_DefaultDelay = 200
 " close the popup and don't process formerly typed keys
 let g:WhichKey_ProcessUnknownMappings = "false"
 
@@ -85,9 +85,15 @@ nmap gC <Action>(GotoClass)
 nmap gF <Action>(GotoFile)
 nmap g] <Action>(GotoNextError)
 nmap g[ <Action>(GotoPreviousError)
+" WebStorm-specific mappings
+if &ide == 'WebStorm'
+  nmap <leader>f <Action>(Javascript.Linters.EsLint.Fix)
+else
+  " For other IDEs, keep the original mappings
+  nmap <leader>F <Action>(ShowReformatFileDialog)
+  nmap <leader>f <Action>(ReformatCode)
+endif
 
-nmap <leader>F <Action>(ShowReformatFileDialog)
-nmap <leader>f <Action>(ReformatCode)
 
 nmap <leader>rr <Action>(RenameElement)
 nmap <leader>rv <Action>(IntroduceVariable)

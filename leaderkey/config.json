@@ -1,110 +1,134 @@
 {
-  "type" : "group",
   "actions" : [
     {
       "actions" : [
         {
-          "value" : "/Applications/WezTerm.app",
           "key" : "w",
+          "label" : "WezTerm",
           "type" : "application",
-          "label" : "WezTerm"
+          "value" : "/Applications/WezTerm.app"
         },
         {
-          "type" : "application",
           "key" : "y",
-          "label" : "",
+          "type" : "application",
           "value" : "/Applications/Yandex Music.app"
         },
         {
-          "label" : "",
-          "key" : "i",
-          "value" : "/Applications/IntelliJ IDEA.app",
-          "type" : "application"
-        },
-        {
           "key" : "z",
-          "label" : "",
-          "value" : "/Applications/Zed.app",
-          "type" : "application"
+          "type" : "application",
+          "value" : "/Applications/Zed.app"
         },
         {
+          "key" : "g",
           "type" : "application",
-          "label" : "",
-          "value" : "/Applications/ChatGPT.app",
-          "key" : "g"
+          "value" : "/Applications/ChatGPT.app"
         },
         {
-          "type" : "application",
-          "value" : "/System/Applications/Reminders.app",
-          "key" : "r",
-          "label" : ""
-        },
-        {
-          "type" : "application",
-          "label" : "",
           "key" : "o",
+          "type" : "application",
           "value" : "/Applications/Microsoft Outlook.app"
         },
         {
-          "value" : "/Applications/Microsoft Teams.app",
-          "type" : "application",
           "key" : "t",
-          "label" : ""
+          "type" : "application",
+          "value" : "/Applications/Microsoft Teams.app"
+        },
+        {
+          "key" : "n",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "i",
+              "type" : "application",
+              "value" : "/Applications/IntelliJ IDEA.app"
+            },
+            {
+              "key" : "v",
+              "type" : "application",
+              "value" : "/Applications/Visual Studio Code.app"
+            },
+            {
+              "key" : "c",
+              "type" : "application",
+              "value" : "/Applications/Cursor.app"
+            }
+          ],
+          "iconPath" : "apple.terminal.on.rectangle.fill",
+          "key" : "d",
+          "label" : "Development",
+          "type" : "group"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
         }
       ],
-      "type" : "group",
       "key" : "o",
-      "label" : "Open"
+      "label" : "Open",
+      "type" : "group"
     },
     {
       "actions" : [
-        {
-          "value" : "",
-          "type" : "command",
-          "label" : "Switch Keyboard Layout",
-          "key" : "s"
-        }
+
       ],
-      "type" : "group",
+      "key" : "k",
       "label" : "Keyboard",
-      "key" : "k"
+      "type" : "group"
     },
     {
       "actions" : [
         {
-          "value" : "raycast://extensions/raycast/window-management/maximize",
           "key" : "m",
           "label" : "maximize",
-          "type" : "url"
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/maximize"
         },
         {
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/top-half",
           "key" : "k",
-          "label" : "top half"
+          "label" : "top half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/top-half"
         },
         {
-          "type" : "url",
           "key" : "j",
           "label" : "bottom half",
+          "type" : "url",
           "value" : "raycast://extensions/raycast/window-management/bottom-half"
         },
         {
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/previous-display",
           "key" : "h",
-          "label" : "previous desktop"
+          "label" : "previous desktop",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/previous-display"
         },
         {
           "key" : "l",
           "label" : "next desktop",
           "type" : "url",
           "value" : "raycast://extensions/raycast/window-management/next-display"
+        },
+        {
+          "key" : "a",
+          "label" : "almost maximize",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/almost-maximize"
         }
       ],
       "key" : "w",
       "label" : "Window Management",
       "type" : "group"
+    },
+    {
+      "iconPath" : "bookmark.fill",
+      "key" : "b",
+      "label" : "Bookmarks",
+      "type" : "url",
+      "value" : "raycast://extensions/dru89/obsidian-bookmarks/search-bookmarks"
     }
-  ]
+  ],
+  "type" : "group"
 }
