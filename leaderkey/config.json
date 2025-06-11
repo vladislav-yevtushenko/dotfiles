@@ -54,6 +54,11 @@
               "key" : "c",
               "type" : "application",
               "value" : "/Applications/Cursor.app"
+            },
+            {
+              "key" : "w",
+              "type" : "application",
+              "value" : "/Applications/WebStorm.app"
             }
           ],
           "iconPath" : "apple.terminal.on.rectangle.fill",
