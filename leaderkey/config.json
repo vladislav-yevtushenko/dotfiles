@@ -4,9 +4,9 @@
       "actions" : [
         {
           "key" : "w",
-          "label" : "WezTerm",
+          "label" : "Warp",
           "type" : "application",
-          "value" : "/Applications/WezTerm.app"
+          "value" : "/Applications/Warp.app"
         },
         {
           "key" : "y",

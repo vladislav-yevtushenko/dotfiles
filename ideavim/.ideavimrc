@@ -1,5 +1,6 @@
 let mapleader =  " "
 let g:highlightedyank_highlight_duration = "300"
+let g:WhichKeyDesc_ide = "<leader>I IDE"
 let g:WhichKeyDesc_goto = "g GoTo"
 let g:WhichKeyDesc_find = "<leader>\\ Find"
 let g:WhichKeyDesc_show = "<leader>s Show"
@@ -20,7 +21,7 @@ let g:WhichKeyDesc_goto_implementation_sh = "gI Implementation Split Horizontall
 let g:WhichKey_KeyColor = "red"
 let g:WhichKey_KeyStyle = "bold"
 let g:WhichKey_ShowVimActions = "true"
-let g:WhichKey_FontFamily = "Hack Nerd Font"
+let g:WhichKey_FontFamily = "Hack Nerd Font Propo"
 let g:WhichKey_Divider = "  "
 let g:WhichKey_FontSize = "12"
 
@@ -85,14 +86,7 @@ nmap gC <Action>(GotoClass)
 nmap gF <Action>(GotoFile)
 nmap g] <Action>(GotoNextError)
 nmap g[ <Action>(GotoPreviousError)
-" WebStorm-specific mappings
-if &ide == 'WebStorm'
-  nmap <leader>f <Action>(Javascript.Linters.EsLint.Fix)
-else
-  " For other IDEs, keep the original mappings
-  nmap <leader>F <Action>(ShowReformatFileDialog)
-  nmap <leader>f <Action>(ReformatCode)
-endif
+
 
 
 nmap <leader>rr <Action>(RenameElement)
@@ -133,3 +127,9 @@ nmap <leader>S<Space> <Action>(ChangeSplitOrientation)
 map <leader>cl <Plug>CommentaryLine
 map <leader>cc <Plug>Commentary
 map <leader>cu <Plug>Commentary<Plug>Commentary
+nmap <leader>F <Action>(ShowReformatFileDialog)
+nmap <leader>f <Action>(ReformatCode)
+nmap <leader>Ir <Action>(RestartIde)
+
+nmap <leader>Ci <Action>(copilot.chat.inline)
+imap <C-S-/> <Action>(copilot.cycleNextInlays)
