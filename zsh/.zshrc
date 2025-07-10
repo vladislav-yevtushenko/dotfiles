@@ -1,30 +1,30 @@
 # Oh My Zsh configuration
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+#export ZSH="$HOME/.oh-my-zsh"
+#ZSH_THEME="robbyrussell"
 
 # Oh My Zsh plugins (optimized for Warp terminal)
-plugins=(git brew docker kubectl macos asdf)
+#plugins=(git brew docker kubectl macos asdf)
 
 # Load Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # PATH configuration
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 
 # Docker/Colima setup - lazy load for performance
-if command -v colima &> /dev/null; then
-    export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
-    _lazy_colima_setup() {
-        if [[ -z "$TESTCONTAINERS_HOST_OVERRIDE" ]]; then
-            export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
-        fi
-    }
-    alias docker='_lazy_colima_setup; unalias docker; docker'
+if command -v colima &>/dev/null; then
+  export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+  _lazy_colima_setup() {
+    if [[ -z "$TESTCONTAINERS_HOST_OVERRIDE" ]]; then
+      export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
+    fi
+  }
+  alias docker='_lazy_colima_setup; unalias docker; docker'
 fi
 # Completion system - optimized for performance
-autoload -Uz compinit
-compinit -C
+#autoload -Uz compinit
+#compinit -C
 
 # Environment variables
 export LANG=en_US.UTF-8
@@ -71,15 +71,14 @@ if [ -f '/Users/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vlad
 
 # Lazy-loaded tools for better startup performance
 thefuck_alias() {
-    eval $(thefuck --alias)
-    unset -f thefuck_alias
+  eval $(thefuck --alias)
+  unset -f thefuck_alias
 }
 alias fuck='thefuck_alias; fuck'
 
-_glab_completion() {
-    source <(glab completion -s zsh)
-    compdef _glab glab
-    unset -f _glab_completion
-}
-compdef _glab_completion glab
-
+# _glab_completion() {
+#   source <(glab completion -s zsh)
+#   compdef _glab glab
+#   unset -f _glab_completion
+# }
+#compdef _glab_completion glab
