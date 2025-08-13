@@ -1,12 +1,12 @@
 # Oh My Zsh configuration
-#export ZSH="$HOME/.oh-my-zsh"
-#ZSH_THEME="robbyrussell"
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
 
 # Oh My Zsh plugins (optimized for Warp terminal)
-#plugins=(git brew docker kubectl macos asdf)
+plugins=(git brew docker kubectl macos asdf)
 
 # Load Oh My Zsh
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # PATH configuration
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -23,8 +23,8 @@ if command -v colima &>/dev/null; then
   alias docker='_lazy_colima_setup; unalias docker; docker'
 fi
 # Completion system - optimized for performance
-#autoload -Uz compinit
-#compinit -C
+autoload -Uz compinit
+compinit -C
 
 # Environment variables
 export LANG=en_US.UTF-8
@@ -51,6 +51,7 @@ alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+alias l='lsd -lat'
 alias lt='ls --tree'
 alias dirs='dirs -lpv'
 
@@ -69,16 +70,13 @@ fzf-search-dir() {
 if [ -f '/Users/vlad/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Lazy-loaded tools for better startup performance
-thefuck_alias() {
-  eval $(thefuck --alias)
-  unset -f thefuck_alias
-}
-alias fuck='thefuck_alias; fuck'
+alias fuck='thefuck'
 
-# _glab_completion() {
-#   source <(glab completion -s zsh)
-#   compdef _glab glab
-#   unset -f _glab_completion
-# }
-#compdef _glab_completion glab
+ _glab_completion() {
+   source <(glab completion -s zsh)
+   compdef _glab glab
+   unset -f _glab_completion
+ }
+compdef _glab_completion glab
+
+export GIT_EXTERNAL_DIFF=difft

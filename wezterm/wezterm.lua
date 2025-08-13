@@ -6,14 +6,34 @@ local config = wezterm.config_builder()
 config.check_for_updates = true
 config.term = "xterm-256color"
 config.use_ime = true
-config.color_scheme = "Desert"
-config.font_size = 14.0
-config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false })
+config.color_scheme = "Gruvbox dark, soft (base16)"
+config.font_size = 15.0
+config.font = wezterm.font_with_fallback({
+	"JetBrains Mono",
+	"Fira Code",
+	"Source Code Pro",
+	"Ubuntu Mono",
+	"Monospace",
+})
 config.window_decorations = "RESIZE"
-config.tab_bar_at_bottom = true
+config.window_background_gradient = {
+	orientation = "Vertical",
+	colors = {
+		"#2e2a2a",
+		"#1e1a1a",
+		"#2e2a09",
+	},
+	interpolation = "CatmullRom",
+}
+config.tab_bar_at_bottom = false
 config.tab_max_width = 32
-config.use_fancy_tab_bar = false
-config.window_background_opacity = 0.9
+config.use_fancy_tab_bar = true
+config.window_padding = {
+	left = 2,
+	right = 1,
+	top = 2,
+	bottom = 0,
+}
 config.macos_window_background_blur = 20
 config.inactive_pane_hsb = {
 	saturation = 0.9,

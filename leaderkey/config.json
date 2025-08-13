@@ -4,9 +4,9 @@
       "actions" : [
         {
           "key" : "w",
-          "label" : "Warp",
+          "label" : "Wezterm",
           "type" : "application",
-          "value" : "/Applications/Warp.app"
+          "value" : "/Applications/WezTerm.app"
         },
         {
           "key" : "y",
@@ -70,6 +70,11 @@
           "key" : "s",
           "type" : "application",
           "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+        },
+        {
+          "key" : "c",
+          "type" : "application",
+          "value" : "/Applications/Google Chrome.app"
         }
       ],
       "key" : "o",
@@ -133,6 +138,12 @@
       "label" : "Bookmarks",
       "type" : "url",
       "value" : "raycast://extensions/dru89/obsidian-bookmarks/search-bookmarks"
+    },
+    {
+      "key" : "c",
+      "label" : "Clipboard History",
+      "type" : "url",
+      "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
     }
   ],
   "type" : "group"

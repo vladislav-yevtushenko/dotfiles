@@ -1,135 +1,69 @@
-let mapleader =  " "
-let g:highlightedyank_highlight_duration = "300"
-let g:WhichKeyDesc_ide = "<leader>I IDE"
-let g:WhichKeyDesc_goto = "g GoTo"
-let g:WhichKeyDesc_find = "<leader>\\ Find"
-let g:WhichKeyDesc_show = "<leader>s Show"
-let g:WhichKeyDesc_splits = "<leader>S Splits"
-let g:WhichKeyDesc_project = "<leader>p Project"
-let g:WhichKeyDesc_breakpoints  "<leader>b Breakpoints"
-let g:WhichKeyDesc_code_reformat_dialog = "<leader>F Reformat File Dialog"
-let g:WhichKeyDesc_code_reformat = "<leader>f Reformat Code"
-let g:WhichKeyDesc_code_refactor = "<leader>r Code Refactor"
-let g:WhichKeyDesc_code_refactor_rename = "<leader>rr Rename"
-let g:WhichKeyDesc_goto_declaration = "gd Declaration"
-let g:WhichKeyDesc_goto_class = "gC Class"
-let g:WhichKeyDesc_goto_file = "gF File"
-let g:WhichKeyDesc_goto_next_error = "g] Next Error"
-let g:WhichKeyDesc_goto_prev_error = "g[ Previous Error"
-let g:WhichKeyDesc_goto_implementations = "gi Implementation"
-let g:WhichKeyDesc_goto_implementation_sh = "gI Implementation Split Horizontally"
-let g:WhichKey_KeyColor = "red"
-let g:WhichKey_KeyStyle = "bold"
-let g:WhichKey_ShowVimActions = "true"
-let g:WhichKey_FontFamily = "Hack Nerd Font Propo"
-let g:WhichKey_Divider = "  "
-let g:WhichKey_FontSize = "12"
-
-let g:WhichKey_ShowTypedSequence = "false"
-" make the popup appear much slower
-let g:WhichKey_DefaultDelay = 200
-" close the popup and don't process formerly typed keys
-let g:WhichKey_ProcessUnknownMappings = "false"
-
-
-
-set scrolloff=10
-set showmode
-set showcmd
-set visualbell
-set clipboard+=unnamed
-set ignorecase
-set smartcase " tells Vim that if any of the search characters are uppercase, treat the search as case-sensitive.
-set incsearch " tells Vim to start searching as you type, rather than waiting for you to submit the complete search string first.
-set hlsearch
-set notimeout
-set timeoutlen=5000
-"""  plugins """
+" ideavimrc configuratioDTree with  ntelliJ IDEA
+" lazyvim compatible
+let mapleader = "\<Space>"
+set clipboard=unnamedplus " Use system clipboard
+" Plugins
+" Commentary plugin adds mapping for quickly commenting stuff out
 set commentary
-set which-key
-set ideamarks
 set ideajoin
-set quickscope
-set commentary
+set which-key
 set surround
+set easymotion
+let g:highlightedyank_highlight_duration = "300"
 set highlightedyank
-set nerdtree
-let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-""" keymaps """
-" Display options
-map <leader>dd <action>(ToggleDistractionFreeMode)
-map <leader>dz <action>(ToggleZenMode)
-map <leader>df <action>(ToggleFullScreen)
+" FunctionTextObj: Adds text objects for manipulating functions/methods
+set functiontextobj
+"which-key settings
+let g:WhichKey_DefaultDelay = 600
+let g:WhichKey_FontFamily = "JetBrainsMono Nerd Font"
+let g:WhichKey_Divider = "  "
+let g:WhichKey_ShowVimActions = "true"
+set notimeout
+" Key mappings
+nmap <leader>gg <Action>(ActivateCommitToolWindow)
 
-" Open NERDTree (use q to exit)
-map <leader>x :NERDTreeToggle<CR>
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentChangedFiles)
+nmap <leader>ww <Action>(NextSplitter)
+nmap <leader>wo <Action>(UnsplitAll)
+nmap <leader>wx <Action>(OpenEditorInOppositeTabGroup)
+nmap <leader>wd <Action>(CloseContent)
+nmap <leader>ws <Action>(SplitHorizontally)
+nmap <leader>wv <Action>(SplitVertically)
+nmap <leader>, <Action>(RecentLocations)
+nmap <leader>fn <Action>(NewFile)
 
-nmap <F3> :set hlsearch!<CR>
-nmap [<space> O<Esc>
-nmap ]<space> o<Esc>
-nmap <leader>t <Action>(ActivateTerminalToolWindow)
-nmap <leader>e <Action>(RecentFiles)
-nmap <leader>q <Action>(QuickJavaDoc)
-nmap <leader>E <Action>(RecentLocations)
-nmap <leader>\g <Action>(FindInPath)
-nmap <leader>\w <Action>(FindWordAtCaret)
-nmap <leader>ss <Action>(FileStructurePopup)
-nmap <leader>si <Action>(ShowIntentionActions)
-nmap <leader>se <Action>(ShowErrorDescription)
-nmap gi <Action>(GotoImplementation)
-nmap gI <Action>(SplitHorizontally)<Action>(GotoImplementation)
-nmap gd <Action>(GotoDeclaration)
-nmap gum <Action>(GotoSuperMethod)
-nmap gnm <Action>(MethodDown)
-nmap gpm <Action>(MethodUp)
-nmap gC <Action>(GotoClass)
-nmap gF <Action>(GotoFile)
-nmap g] <Action>(GotoNextError)
-nmap g[ <Action>(GotoPreviousError)
+" Code navigation
+nmap <leader>cs <Action>(FileStructurePopup)
+nmap gK <Action>(QuickJavaDoc)
+nmap gk <Action>(QuickTypeDefinition)
+nmap gD <Action>(GotoDeclarationOnly)
+nmap gr <Action>(ShowUsages)
+nmap gI <Action>(GotoImplementation)
+nmap <leader>ct <Action>(QuickPreview)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap [[ <Action>(GotoPrevElementUnderCaretUsage)
+nmap ]] <Action>(GotoNextElementUnderCaretUsage)
+" nmap ]r <Action>(GoToCodeGroup)
+nmap ]M <Action>(MethodDown)
+nmap [M <Action>(MethodUp)
 
-
-
-nmap <leader>rr <Action>(RenameElement)
-nmap <leader>rv <Action>(IntroduceVariable)
-map <leader>rm <Action>(ExtractMethod)
-nmap <leader>rf <Action>(IntroduceField)
-nmap <leader>rp <Action>(IntroduceParameter)
-nmap <leader>rc <Action>(IntroduceConstant)
-nmap <leader>rd <Action>(DelegateMethods)
-nmap <leader>rq <Action>(Refactorings.QuickListPopupAction)
-
-
-nmap <leader>pR <Action>(RunMenu)
-nmap <leader>pB <Action>(BuildMenu)
-nmap <leader>pz <Action>(Rerun)
-nmap <leader>pr <Action>(EditorPopupMenu.Run)
-nmap <leader>pd <Action>(ChooseDebugConfiguration)
-nmap <leader>ps <Action>(ChooseRunConfiguration)
-
-nmap <leader>bl <Action>(ToggleLineBreakpoint)
-nmap <leader>bs <Action>(ViewBreakpoints)
-map <C-r> <Action>(Replace)
-
-nmap <C-O> <Action>(Back)
-nmap <C-I> <Action>(Forward)
-
-nmap <leader>Sm <Action>(MoveEditorToOppositeTabGroup)
-nmap <leader>SJ <Action>(SplitHorizontally)
-nmap <leader>SL <Action>(SplitVertically)
-nmap <leader>Sq <Action>(UnsplitAll)
-nmap <leader>Sc <Action>(SplitChooser)
-nmap <leader>S<Down> <Action>(StretchSplitToBottom)
-nmap <leader>S<Left> <Action>(StretchSplitToLeft)
-nmap <leader>S<Right> <Action>(StretchSplitToRight)
-nmap <leader>S<Up> <Action>(StretchSplitToTop)
-nmap <leader>S= <Action>(MaximizeEditorInSplit)
-nmap <leader>S<Space> <Action>(ChangeSplitOrientation)
-map <leader>cl <Plug>CommentaryLine
-map <leader>cc <Plug>Commentary
-map <leader>cu <Plug>Commentary<Plug>Commentary
-nmap <leader>F <Action>(ShowReformatFileDialog)
-nmap <leader>f <Action>(ReformatCode)
-nmap <leader>Ir <Action>(RestartIde)
-
-nmap <leader>Ci <Action>(copilot.chat.inline)
-imap <C-S-/> <Action>(copilot.cycleNextInlays)
+" Codesymotion-linemarks) editing
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cb <Action>(ChooseRunConfiguration)
+nmap <leader>cz <Action>(Rerun)
+nmap <A-j> :action MoveLineDown<CR>
+nmap <A-k> :action MoveLineUp<CR>
+vmap <A-j> :action MoveLineDown<CR>
+vmap <A-k> :action MoveLineUp<CR>
+nmap " <Action>(PasteMultiple)
+" Code refactoring
+map <leader>r <Action>(RefactoringMenu)
+map <leader>cR <Action>(RenameFile)
+" IDE
+nmap <leader>n <Action>(ActivateNotificationsToolWindow)
+nmap <leader>un <Action>(ClearAllNotifications)
+nmap <leader>qr <Action>(RestartIde)
