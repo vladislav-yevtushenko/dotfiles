@@ -1,0 +1,16 @@
+[difftool "difftastic"]
+  cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
+[diff]
+  external = difft
+  tool = difftastic
+
+[difftool]
+  prompt = false
+[user]
+	email = vladislav_yevtushenko@epam.com
+	name = Vladislav Yevtushenko
+[core]
+	autocrlf = input
+	quotePath = false
+[init]
+	defaultBranch = main

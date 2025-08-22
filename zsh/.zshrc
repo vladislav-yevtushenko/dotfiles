@@ -70,8 +70,6 @@ fzf-search-dir() {
 if [ -f '/Users/vlad/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vlad/google-cloud-sdk/completion.zsh.inc'; fi
 
-alias fuck='thefuck'
-
  _glab_completion() {
    source <(glab completion -s zsh)
    compdef _glab glab
@@ -79,4 +77,4 @@ alias fuck='thefuck'
  }
 compdef _glab_completion glab
 
-export GIT_EXTERNAL_DIFF=difft
+eval $(thefuck --alias)
