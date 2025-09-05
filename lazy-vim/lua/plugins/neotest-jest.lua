@@ -1,19 +1,14 @@
 return {
   {
     "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-neotest/neotest-jest",
-    },
+    dependencies = { "haydenmeade/neotest-jest" },
     config = function()
       require("neotest").setup({
         adapters = {
           require("neotest-jest")({
             jestCommand = "npm test --",
-            jestConfigFile = "jest.config.js",
-            cwd = function()
+            jestConfigFile = "jest.config.js", -- или jest.config.ts
+            cwd = function(path)
               return vim.fn.getcwd()
             end,
             env = { CI = true },

@@ -5,8 +5,13 @@ return {
   opts = {
     statuscolumn = { enabled = true },
     scroll = { enabled = false },
-    explorer = { enabled = true },
+    explorer = { enabled = false },
+    tabline = { enabled = false },
+    image = { enabled = true },
     picker = {
+      hidden = true,
+      ignored = true,
+      ui_select = true,
       icons = {
         tree = {
           vertical = "│",
@@ -22,7 +27,10 @@ return {
       },
       sources = {
         explorer = {
+          git_status = true,
           git_status_open = true,
+          watch = true,
+          follow_file = true,
           formatters = {
             files = {},
           },
