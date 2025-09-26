@@ -1,0 +1,4 @@
+# Auto-sync theme with macOS appearance on Kitty start
+
+launch --type=background "$HOME/.config/kitty/scripts/theme-auto-macos.sh"
+

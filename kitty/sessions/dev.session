@@ -1,0 +1,14 @@
+# Sample reusable session: two tabs with splits
+
+new_tab title Dev
+cd ~
+layout fat
+launch zsh
+launch --location=split-right zsh
+
+new_tab title Tools
+cd ~
+layout tall
+launch zsh
+launch --location=split-bottom zsh
+

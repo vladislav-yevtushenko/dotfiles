@@ -6,7 +6,8 @@ local config = wezterm.config_builder()
 config.check_for_updates = true
 config.term = "xterm-256color"
 config.use_ime = true
-config.color_scheme = "Gruvbox dark, soft (base16)"
+config.color_scheme = "Gruvbox light, hard (base16)"
+
 config.font_size = 15.0
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
@@ -16,15 +17,6 @@ config.font = wezterm.font_with_fallback({
 	"Monospace",
 })
 config.window_decorations = "RESIZE"
-config.window_background_gradient = {
-	orientation = "Vertical",
-	colors = {
-		"#2e2a2a",
-		"#1e1a1a",
-		"#2e2a09",
-	},
-	interpolation = "CatmullRom",
-}
 config.tab_bar_at_bottom = false
 config.tab_max_width = 32
 config.use_fancy_tab_bar = true
